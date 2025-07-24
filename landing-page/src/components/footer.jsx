@@ -20,7 +20,7 @@ const FooterSection = () => {
                 <span className="text-brand ml-1">Cafe</span>
               </div>
             </div>
-            
+                <p>Lorem ipsum dolor Natus dicta libero repudiandae ea error! In.</p>
               <ul className='space-x-6 '>
               <i className="fa-brands fa-facebook"></i>
               <i className="fa-brands fa-square-twitter"></i>
@@ -29,7 +29,7 @@ const FooterSection = () => {
               </ul>
            
             <div>
-              <p>Lorem ipsum dolor Natus dicta libero repudiandae ea error! In.</p>
+        
                 
             </div>
             </div>

@@ -13,7 +13,7 @@ const ContactSection = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: '' }); // Clear errors on change
+    setErrors({ ...errors, [e.target.name]: '' }); 
   };
 
   const validate = () => {
@@ -49,32 +49,39 @@ const ContactSection = () => {
           <p className="text-[var(--color-brand)] font-semibold">Contact Us</p>
           <h2 className="text-3xl font-bold mb-8">Say Hello</h2>
           <div className="flex items-start mb-6">
-            <div className="text-[var(--color-brand)] text-xl mr-4">
+            <div className='p-1 border-4 border-dotted ... rounded-full'>
+            <div className="text-white  bg-[var(--color-brand)] p-3 rounded-full text-xl">
               <FaMapMarkerAlt />
             </div>
+            </div>
+         
             <div>
-              <h4 className="font-bold">Address</h4>
-              <p className="text-gray-600">Location KG 9 Ave, Kigali</p>
+              <h4 className="font-bold ml-5">Address</h4>
+              <p className="text-gray-600 ml-5">Location KG 9 Ave, Kigali</p>
             </div>
           </div>
           <div className="flex items-start mb-6">
-            <div className="text-[var(--color-brand)] text-xl mr-4">
-              <FaEnvelope />
+            <div className='p-1 border-4 border-dotted ... rounded-full'>
+            <div className="text-white  bg-[var(--color-brand)] p-3 rounded-full text-xl">
+            <FaEnvelope  />
+            </div>
             </div>
             <div>
-              <h4 className="font-bold">Email</h4>
-              <a href="mailto:businesscafe@info.com" className="text-gray-600 underline">
+              <h4 className="font-bold ml-5">Email</h4>
+              <a href="mailto:businesscafe@info.com" className="text-gray-600 underline ml-5">
                 businesscafe@info.com
               </a>
             </div>
           </div>
           <div className="flex items-start mb-6">
-            <div className="text-[var(--color-brand)] text-xl mr-4">
+            <div className='p-1 border-4 border-dotted ... rounded-full'>
+            <div className="text-white  bg-[var(--color-brand)] p-3 rounded-full text-xl">
               <FaPhoneAlt />
             </div>
+            </div>
             <div>
-              <h4 className="font-bold">Phone</h4>
-              <p className="text-gray-600">+250788183828</p>
+              <h4 className="font-bold ml-5">Phone</h4>
+              <p className="text-gray-600 ml-5">+250788183828</p>
             </div>
           </div>
         </div>
