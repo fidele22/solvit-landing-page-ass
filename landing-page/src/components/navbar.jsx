@@ -20,6 +20,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
+      
       <ul className="hidden md:flex space-x-10 font-medium">
         <li>
           <a href="#home" className="text-brand font-semibold hover:text-brand cursor-pointer">Home</a>

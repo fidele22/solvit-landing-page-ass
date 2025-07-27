@@ -33,7 +33,7 @@ const BenefitSection = () => {
 
                  <div className='bg-[var(--color-greenwhite)] rounded p-8 lg:w-60 text-center'>
                     <span className='text-center bg-[var(--color-brand)] p-4 text-2xl rounded-full' 
-                    style={{width:'20px'}}><i className="fas fa-book"></i></span>
+                    style={{width:'20px', height:'17px'}}><i className="fas fa-book"></i></span>
                     <h1 className='font-bold text-20 py-2 text-center mt-5'>Parking area</h1>
                     <p className='justify-center text-center'> laudantium at lla aperiam, a atque sequi?</p>
                 </div>

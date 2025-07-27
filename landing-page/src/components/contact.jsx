@@ -49,7 +49,7 @@ const ContactSection = () => {
           <p className="text-[var(--color-brand)] font-semibold">Contact Us</p>
           <h2 className="text-3xl font-bold mb-8">Say Hello</h2>
           <div className="flex items-start mb-6">
-            <div className='p-1 border-4 border-dotted ... rounded-full'>
+            <div className='p-1 border-4 border-dotted ... rounded-full text-[var(--color-brand)]'>
             <div className="text-white  bg-[var(--color-brand)] p-3 rounded-full text-xl">
               <FaMapMarkerAlt />
             </div>
@@ -61,7 +61,7 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="flex items-start mb-6">
-            <div className='p-1 border-4 border-dotted ... rounded-full'>
+            <div className='p-1 border-4 border-dotted ... rounded-full text-[var(--color-brand)]'>
             <div className="text-white  bg-[var(--color-brand)] p-3 rounded-full text-xl">
             <FaEnvelope  />
             </div>
@@ -74,7 +74,7 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="flex items-start mb-6">
-            <div className='p-1 border-4 border-dotted ... rounded-full'>
+            <div className='p-1 border-4 border-dotted ... rounded-full text-[var(--color-brand)]'>
             <div className="text-white  bg-[var(--color-brand)] p-3 rounded-full text-xl">
               <FaPhoneAlt />
             </div>
