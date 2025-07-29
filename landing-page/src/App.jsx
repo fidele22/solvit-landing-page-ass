@@ -3,7 +3,8 @@ import TopNavbar from './dashboard/topNavbar'
 
 import { UserProvider } from './contexts/userContext';
 import { ThemeProvider } from './contexts/themeContext';
-import { ProductProvider } from './contexts/productContext'
+import { ProductProvider } from './contexts/productContext';
+ import { UserLogInProvider } from './contexts/loggedInContext';
 // landing page imports
 import Home from './components/home';
 import Service from './components/service';
@@ -39,14 +40,16 @@ function App() {
       {/* dashboard page */}
       <ThemeProvider>
         <ProductProvider>
+        <UserLogInProvider>
        <UserProvider>
       <div className="flex h-screen overflow-hidden">
   {/* Sidebar stays fixed */}
+    <TopNavbar />
   <SideNavBar />
 
   {/* Main content area */}
   <div className="flex-1 overflow-y-auto">
-    <TopNavbar />
+  
     <div className="lg:p-6">
       <Routes>
         <Route path="/" element={<DashboardOverview />} />
@@ -58,6 +61,7 @@ function App() {
 </div>
 
     </UserProvider>
+    </UserLogInProvider>
     </ProductProvider>
     </ThemeProvider>
 

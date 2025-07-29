@@ -12,14 +12,14 @@ export const ThemeProvider = ({ children }) => {
 
 const toggleTheme = () => {
   const newTheme = theme === 'light' ? 'dark' : 'light';
-  console.log('Toggling theme to:', newTheme); // Debug
+  console.log('Toggling theme to:', newTheme); 
   setTheme(newTheme);
   localStorage.setItem('theme', newTheme);
 };
 
 
 useEffect(() => {
-  document.body.className = theme; // Set body class to 'light' or 'dark'
+  document.body.className = theme; 
 }, [theme]);
 
 
