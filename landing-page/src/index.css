@@ -1,11 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap');
 @import "tailwindcss";
+/* @tailwind base;
+@tailwind components; */
+@tailwind utilities;
 
 @theme{
   --color-brand: #008576;
   --color-whitegreen: #72bf6a;
   --color-greenwhite: #E7FFFB;
+  
 }
+/* styles.css */
+body {
+  transition: background-color 0.3s ease;
+}
+
+body.light {
+  background-color: #ffffff; /* Light theme background */
+  color: #000001; /* Light theme text color */
+}
+
+body.dark {
+  background-color: #1a1a1a; /* Dark theme background */
+  color: #ffffff; /* Dark theme text color */
+}
+
+/* Additional custom styles can be added here */
+
 html {
   scroll-behavior: smooth;
 }

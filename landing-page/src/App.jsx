@@ -1,7 +1,9 @@
 import React from 'react';
 import TopNavbar from './dashboard/topNavbar'
 
-import { UserProvider } from './dashboard/userContext';
+import { UserProvider } from './contexts/userContext';
+import { ThemeProvider } from './contexts/themeContext';
+import { ProductProvider } from './contexts/productContext'
 // landing page imports
 import Home from './components/home';
 import Service from './components/service';
@@ -14,6 +16,7 @@ import Footer from './components/footer';
 // dashbord imports 
 import SideNavBar from './dashboard/sideNavbar'
 import DashboardOverview from './dashboard/dashboardPage';
+import UserOverview from './dashboard/userPage';
 // import UsersPage from './UsersPage';
 // import ProductsPage from './ProductsPage';
 // import AssignmentsPage from './AssignmentsPage';
@@ -34,25 +37,29 @@ function App() {
       <Footer /> */}
 
       {/* dashboard page */}
+      <ThemeProvider>
+        <ProductProvider>
        <UserProvider>
-      <div>
-           <div className=" bg-gray-50">
-          <TopNavbar />
-        
-        </div>
+      <div className="flex h-screen overflow-hidden">
+  {/* Sidebar stays fixed */}
+  <SideNavBar />
 
-         <div className="flex bg-gray-50 min-h-screen">
-              <SideNavBar />
-        <Routes>
-          <Route path="/" element={<DashboardOverview />} />
-          {/* <Route path="/users" element={<UsersPage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/assignments" element={<AssignmentsPage />} />
-          <Route path="/categories" element={<CategoriesPage />} /> */}
-        </Routes>
-      </div>
-      </div>
+  {/* Main content area */}
+  <div className="flex-1 overflow-y-auto">
+    <TopNavbar />
+    <div className="lg:p-6">
+      <Routes>
+        <Route path="/" element={<DashboardOverview />} />
+        <Route path="/userpage" element={<UserOverview />} />
+        {/* Add other routes here */}
+      </Routes>
+    </div>
+  </div>
+</div>
+
     </UserProvider>
+    </ProductProvider>
+    </ThemeProvider>
 
     </div>
   );
