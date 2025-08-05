@@ -1,73 +1,39 @@
-import React from 'react';
-import TopNavbar from './dashboard/topNavbar'
-
+// App.js
+import { Routes, Route } from 'react-router-dom';
 import { UserProvider } from './contexts/userContext';
 import { ThemeProvider } from './contexts/themeContext';
 import { ProductProvider } from './contexts/productContext';
- import { UserLogInProvider } from './contexts/loggedInContext';
-// landing page imports
-import Home from './components/home';
-import Service from './components/service';
-import AboutUs from './components/about';
-import Benefit from './components/benefit';
-import Mission from './components/mission';
-import Contact from './components/contact';
-import Footer from './components/footer';
+import { UserLogInProvider } from './contexts/loggedInContext';
 
-// dashbord imports 
-import SideNavBar from './dashboard/sideNavbar'
-import DashboardOverview from './dashboard/dashboardPage';
-import UserOverview from './dashboard/userPage';
-// import UsersPage from './UsersPage';
-// import ProductsPage from './ProductsPage';
-// import AssignmentsPage from './AssignmentsPage';
-// import CategoriesPage from './CategoriesPage';
+import LoginPage from './dashboard/loginPage';
+import Admindashboard from './dashboard/AdminDashboard/Admindashboard';
+import DashboardOverview from './dashboard/AdminDashboard/dashboardOverview';
+import UserPage from './dashboard/AdminDashboard/userPage';
+import ProductPage from './dashboard/AdminDashboard/productPage';
+import AssignedProducts from './dashboard/AdminDashboard/assignedPage';
+import CategorizedProduct from './dashboard/AdminDashboard/categoryPage';
 
-import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
-    <div>
-      {/* <Navbar /> */}
-
-      {/* <section id="home"><Home /></section>
-      <section id="service"><Service /></section>
-      <section id="about"><AboutUs /></section>
-      <section id="benefit"><Benefit /></section>
-      <section id="mission"><Mission /></section>
-      <section id="contact"><Contact /></section>
-      <Footer /> */}
-
-      {/* dashboard page */}
-      <ThemeProvider>
-        <ProductProvider>
+    <ThemeProvider>
+      <ProductProvider>
         <UserLogInProvider>
-       <UserProvider>
-      <div className="flex h-screen overflow-hidden">
-  {/* Sidebar stays fixed */}
-    <TopNavbar />
-  <SideNavBar />
-
-  {/* Main content area */}
-  <div className="flex-1 overflow-y-auto">
-  
-    <div className="lg:p-6">
-      <Routes>
-        <Route path="/" element={<DashboardOverview />} />
-        <Route path="/userpage" element={<UserOverview />} />
-        {/* Add other routes here */}
-      </Routes>
-    </div>
-  </div>
-</div>
-
-    </UserProvider>
-    </UserLogInProvider>
-    </ProductProvider>
+          <UserProvider>
+            <Routes>
+              <Route path="/" element={<LoginPage />} />
+              <Route path="/dashboard" element={<Admindashboard />}>
+                <Route index element={<DashboardOverview />} />
+                <Route path="userpage" element={<UserPage />} />
+                <Route path="productpage" element={<ProductPage />} />
+                <Route path='assignments' element ={<AssignedProducts />} />
+                <Route path='categories' element ={<CategorizedProduct />} />
+              </Route>
+            </Routes>
+          </UserProvider>
+        </UserLogInProvider>
+      </ProductProvider>
     </ThemeProvider>
-
-    </div>
   );
 }
-
 
 export default App;

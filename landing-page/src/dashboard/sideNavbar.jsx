@@ -8,20 +8,20 @@ import { useTheme } from '../contexts/themeContext';
 const Sidebar = () => {
   const location = useLocation();
   const {theme} =useTheme();
-  const { user } = useUser();
+  const { users } = useUser();
    const {product} = useProduct();
   const [isOpen, setIsOpen] = useState(false);
 
-  const totalUsers = user.length;
+  const totalUsers = users.length;
   const totalProducts = product.length;
   const assignedProducts = product.filter((product) => product.status.toLowerCase() === 'assigned').length;
 
   const menuItems = [
-    { to: '/', icon: <Home className="w-5 h-5" />, label: 'Dashboard' },
-    { to: '/userpage', icon: <Users className="w-5 h-5" />, label: 'Users', count: totalUsers },
-    { to: '/products', icon: <Box className="w-5 h-5" />, label: 'Products', count: totalProducts },
-    { to: '/assignments', icon: <List className="w-5 h-5" />, label: 'Assignments', count: assignedProducts },
-    { to: '/categories', icon: <Layers className="w-5 h-5" />, label: 'Categories' },
+   { to: '/dashboard', label: 'Dashboard', icon: <Home className="w-5 h-5" /> },
+  { to: '/dashboard/userpage', label: 'Users', icon: <Users className="w-5 h-5" />,count: totalUsers },
+  { to: '/dashboard/productpage', label: 'Products', icon: <Box className="w-5 h-5" />,count: totalProducts },
+    { to: '/dashboard/assignments', icon: <List className="w-5 h-5" />, label: 'Assignments', count: assignedProducts },
+    { to: '/dashboard/categories', icon: <Layers className="w-5 h-5" />, label: 'Categories' },
   ];
 
   return (
