@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Home, Users, Box, List, Layers, LogOut, Menu } from 'lucide-react';
 import { useUser } from '../contexts/userContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,6 +25,9 @@ const LoginPage = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-100 to-green-900 px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+        <div className='text-center items-center justify-center flex'>
+          <span className='text-9xl'><Box size={60} /></span>
+        </div>
         <h1 className="text-3xl font-bold text-center text-blue-700 mb-6">
           <span className='text-white bg-black p-2 rounded'>I</span>HUZA
         </h1>
@@ -40,7 +44,7 @@ const LoginPage = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
-              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-2 border-b rounded-lg text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
               placeholder="Enter your username"
             />
           </div>
@@ -51,16 +55,17 @@ const LoginPage = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-2 border-b  text-gray-700 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
               placeholder="Enter your password"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+            className="w-full bg-blue-600 text-white cursor-pointer py-2 rounded-lg hover:bg-blue-700 transition duration-200"
           >
             Login
           </button>
+          <p className='text-blue-600'><span>Forget Password</span></p>
         </form>
       </div>
     </div>

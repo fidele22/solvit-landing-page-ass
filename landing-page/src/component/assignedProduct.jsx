@@ -1,9 +1,9 @@
 import React from 'react';
 import { useProduct } from '../contexts/productContext';
-
+import { useTheme } from '../contexts/themeContext';
 const AssignedProducts = () => {
   const { product } = useProduct();
-
+ const {theme} =useTheme();
 
   const assignedProducts = product.filter(
     (product) => product.status.toLowerCase() === 'assigned'
@@ -11,18 +11,18 @@ const AssignedProducts = () => {
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 min-h-screen">
-      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 m-10 text-center">
+      <h2 className={`text-2xl sm:text-3xl font-bol m-10 text-center ${theme==='light'?'text-gray-600':'text-gray-400'}`}>
         Assigned Products
       </h2>
 
       {assignedProducts.length === 0 ? (
-        <p className="text-center text-gray-600">No assigned products found.</p>
+        <p className={`text-center ${theme==='light'?'text-gray-600':'text-white'}`}>No assigned products found.</p>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {assignedProducts.map((item, index) => (
             <div
               key={index}
-              className="bg-white shadow-md border-1 border-gray-200 p-5 rounded-lg overflow-hidden hover:shadow-lg transition duration-300"
+              className={`shadow-md border-1 border-gray-200 p-5 rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ${theme==='light'?'bg-white':'bg-gray-800'}`}
             >
               <img
                 src={item.image}

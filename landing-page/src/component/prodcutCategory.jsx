@@ -1,8 +1,9 @@
 import React from 'react';
 import { useProduct } from '../contexts/productContext';
-
+import { useTheme } from '../contexts/themeContext';
 const ProductByType = () => {
   const { product } = useProduct();
+  const {theme} =useTheme();
 
   // Group products by type
   const groupedByType = product.reduce((acc, item) => {
@@ -15,7 +16,7 @@ const ProductByType = () => {
 
   return (
     <div className="p-6 min-h-screen">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Products by Category (Type)</h2>
+      <h2 className="text-2xl font-bold text-gray-800 m-6 text-center">Products by Category (Type)</h2>
 
       {Object.keys(groupedByType).map((type) => (
         <div key={type} className="mb-10">
@@ -25,7 +26,7 @@ const ProductByType = () => {
             {groupedByType[type].map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow hover:shadow-lg transition duration-300"
+                className={`rounded-lg shadow hover:shadow-lg transition duration-300 $${theme==='light'?'bg-white':'bg-gray-800'}`}
               >
                 <img
                   src={item.image}

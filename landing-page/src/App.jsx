@@ -20,8 +20,8 @@ function App() {
         <UserLogInProvider>
           <UserProvider>
             <Routes>
-              <Route path="/" element={<LoginPage />} />
-              <Route path="/dashboard" element={<Admindashboard />}>
+                <Route path="/" element={<LoginPage />} />
+                <Route path="/dashboard" element={<Admindashboard />}>
                 <Route index element={<DashboardOverview />} />
                 <Route path="userpage" element={<UserPage />} />
                 <Route path="productpage" element={<ProductPage />} />

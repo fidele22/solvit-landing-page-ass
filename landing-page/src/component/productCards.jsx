@@ -1,9 +1,11 @@
 // ProductCardList.jsx
 import React from 'react';
 import { useProduct } from '../contexts/productContext';
+import { useTheme } from '../contexts/themeContext';
 
 const ProductCardList = () => {
   const { product } = useProduct();
+  const {theme} =useTheme()
 
   return (
     <div className="">
@@ -14,7 +16,7 @@ const ProductCardList = () => {
       {product.map((item, index) => (
         <div
           key={index}
-          className="bg-white shadow-lg rounded-xl overflow-hidden transition-transform transform hover:scale-105"
+          className={`shadow-lg rounded-xl overflow-hidden transition-transform transform hover:scale-105 ${theme==='light' ?'bg-white':'bg-gray-800'}`}
         >
           <img
             src={item.image}
